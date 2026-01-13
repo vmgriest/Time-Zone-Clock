@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 World Clock | Real-time Timezone Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-icon">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <h1>World Clock</h1>
+            <p>Your current local time with timezone support</p>
+        </header>
+
+        <main>
+            <div class="clock-container">
+                <div class="clock">
+                    <div class="time" id="current-time">--:--:--</div>
+                    <div class="date" id="current-date">Loading date...</div>
+                    <div class="timezone-badge" id="current-timezone">
+                        <i class="fas fa-clock"></i>
+                        <span>Local Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-change-timezone" id="open-modal-btn">
+                <i class="fas fa-cog"></i>
+                Change Timezone
+            </button>
+        </main>
+
+        <footer>
+            <p>
+                <i class="fas fa-info-circle"></i>
+                Select from 14 timezones worldwide
+            </p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="timezone-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-globe-americas"></i>
+                    Select Timezone
+                </h2>
+                <button class="close-btn" id="close-modal-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label for="timezone-select">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Choose your timezone:
+                </label>
+                <select id="timezone-select">
+                    <option value="local">
+                        <i class="fas fa-location-dot"></i> Local Time
+                    </option>
+                    <option value="America/New_York">🇺🇸 New York (EST)</option>
+                    <option value="America/Chicago">🇺🇸 Chicago (CST)</option>
+                    <option value="America/Denver">🇺🇸 Denver (MST)</option>
+                    <option value="America/Los_Angeles">🇺🇸 Los Angeles (PST)</option>
+                    <option value="Europe/London">🇬🇧 London (GMT)</option>
+                    <option value="Europe/Paris">🇫🇷 Paris (CET)</option>
+                    <option value="Asia/Tokyo">🇯🇵 Tokyo (JST)</option>
+                    <option value="Australia/Sydney">🇦🇺 Sydney (AEST)</option>
+                    <option value="Asia/Dubai">🇦🇪 Dubai (GST)</option>
+                    <option value="Asia/Kolkata">🇮🇳 India (IST)</option>
+                    <option value="Asia/Shanghai">🇨🇳 Shanghai (CST)</option>
+                    <option value="America/Toronto">🇨🇦 Toronto (EST)</option>
+                    <option value="Europe/Berlin">🇩🇪 Berlin (CET)</option>
+                    <option value="Pacific/Auckland">🇳🇿 Auckland (NZST)</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="cancel-btn">
+                    Cancel
+                </button>
+                <button class="btn-confirm" id="confirm-btn">
+                    <i class="fas fa-check"></i>
+                    Update Timezone
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load dayjs from node_modules -->
+    <script src="./node_modules/dayjs/dayjs.min.js"></script>
+    
+    <!-- Load dayjs plugins from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.min.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

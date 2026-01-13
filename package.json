@@ -1,0 +1,24 @@
+{
+  "name": "time-zone-clock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmgriest/Time-Zone-Clock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vmgriest/Time-Zone-Clock/issues"
+  },
+  "homepage": "https://github.com/vmgriest/Time-Zone-Clock#readme",
+  "dependencies": {
+    "dayjs": "^1.11.19",
+    "micromodal": "^0.6.1"
+  }
+}
